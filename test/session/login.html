@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+</head>     
+<body>
+    <a href="logout.php">消除</a>
+    <form action="./check.php">
+        用户名: <input type="text" name="username" id=""> <br>
+        密  码: <input type="password" name="password" id=""><br>
+        <input type="submit" value="登录" id="btn">
+    </form>
+    <script type="text/javascript">
+        $('#btn').click(function(){
+            $.ajax({
+                type:'post',
+                url:'./check.php',
+                data:$('form').eq(0).serialize(),
+                dataType:'json',
+                success:function(data){
+                    // console.log(data);
+                    if(data.flag=='1'){
+                        location.href='./success.html';
+                    }
+                    
+                }
+            });
+            return false;
+        })
+    </script>
+</body>
+</html>

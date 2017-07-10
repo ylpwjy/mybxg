@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>02</div>
+    <script type="text/javascript">
+        // var date=new Date();
+        // date.setDate(date.getDate()+4);
+        // document.cookie='hi=world;expires='+date.toGMTString();
+        // document.cookie='hello=kitty;expires='+date.toGMTString()+'; path=/';
+        
+        // console.log(document.cookie);
+        // function getCookie(key){
+        //     var cookie=document.cookie.split('; ');
+        //     console.log(cookie);
+        //     for(var i=0;i<cookie.length;i++){
+        //         var kv=cookie[i].split('=');
+        //         console.log(kv);
+        //         if(kv[0]==key){
+        //             return kv[1];
+        //         }
+        //     }
+        // }
+        // var ret=getCookie('hi')
+        // console.log(ret);
+        //设置cookie
+        function setCookie(key,value,options){
+            var info=key+'='+value+'; ';
+            for(var key in options){
+                info+=key+'='+options[key]+'; '
+            }
+            // document.cookie=info;
+             console.log(info);
+            
+        }
+        var date=new Date();
+        date.setDate(date.getDate()+3)
+        setCookie('nihao','hello',{
+            expires:date.toGMTString(),
+            path:'/'
+        })
+    </script>
+</body>
+</html>
